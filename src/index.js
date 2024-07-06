@@ -1,3 +1,5 @@
+import DOCS from './help.html'
+
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
   event.respondWith(handleRequest(event.request));
@@ -7,17 +9,17 @@ const dockerHub = "https://registry-1.docker.io";
 
 const routes = {
   // production
-  "docker.libcuda.so": dockerHub,
-  "quay.libcuda.so": "https://quay.io",
-  "gcr.libcuda.so": "https://gcr.io",
-  "k8s-gcr.libcuda.so": "https://k8s.gcr.io",
-  "k8s.libcuda.so": "https://registry.k8s.io",
-  "ghcr.libcuda.so": "https://ghcr.io",
-  "cloudsmith.libcuda.so": "https://docker.cloudsmith.io",
-  "ecr.libcuda.so": "https://public.ecr.aws",
+  "docker.keveon.io": dockerHub,
+  "quay.keveon.io": "https://quay.io",
+  "gcr.keveon.io": "https://gcr.io",
+  "k8s-gcr.keveon.io": "https://k8s.gcr.io",
+  "k8s.keveon.io": "https://registry.k8s.io",
+  "ghcr.keveon.io": "https://ghcr.io",
+  "cloudsmith.keveon.io": "https://docker.cloudsmith.io",
+  "ecr.keveon.io": "https://public.ecr.aws",
 
   // staging
-  "docker-staging.libcuda.so": dockerHub,
+  "docker-staging.keveon.io": dockerHub,
 };
 
 function routeByHosts(host) {
@@ -43,6 +45,17 @@ async function handleRequest(request) {
       }
     );
   }
+ 
+  // return tips.html
+  if (url.pathname === "/") {
+    return new Response(DOCS, {
+      status: 200,
+      headers: {
+        "content-type": "text/html"
+      }
+    });
+  }
+  
   const isDockerHub = upstream == dockerHub;
   const authorization = request.headers.get("Authorization");
   if (url.pathname == "/v2/") {
