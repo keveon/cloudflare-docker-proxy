@@ -1,6 +1,9 @@
 name = "cloudflare-docker-proxy"
 compatibility_date = "2023-12-01"
 
+[placement]
+mode = "smart"
+
 [dev]
 ip = "0.0.0.0"
 port = 8787
