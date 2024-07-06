@@ -1,6 +1,6 @@
 # cloudflare-docker-proxy
 
-![deploy](https://github.com/keveon/cloudflare-docker-proxy/actions/workflows/deploy.yaml/badge.svg)
+[![Deploy to Cloudflare Workers](https://github.com/keveon/cloudflare-docker-proxy/actions/workflows/deploy.yaml/badge.svg)](https://github.com/keveon/cloudflare-docker-proxy/actions/workflows/deploy.yaml)
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/keveon/cloudflare-docker-proxy)
 
