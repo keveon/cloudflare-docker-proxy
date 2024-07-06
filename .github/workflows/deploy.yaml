@@ -18,6 +18,6 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{secrets.CF_ACCOUNT_ID}}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
           command: deploy --env production --minify src/index.js
           environment: production
