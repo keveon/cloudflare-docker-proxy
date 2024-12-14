@@ -1,4 +1,4 @@
-import DOCS from './help.html'
+import DOCS from './help.html';
 
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
@@ -14,6 +14,7 @@ const routes = {
   "gcr.keveon.io": "https://gcr.io",
   "k8s-gcr.keveon.io": "https://k8s.gcr.io",
   "k8s.keveon.io": "https://registry.k8s.io",
+  "lscr.keveon.io": "https://lscr.io",
   "ghcr.keveon.io": "https://ghcr.io",
   "cloudsmith.keveon.io": "https://docker.cloudsmith.io",
   "ecr.keveon.io": "https://public.ecr.aws",
@@ -45,7 +46,7 @@ async function handleRequest(request) {
       }
     );
   }
- 
+
   // return tips.html
   if (url.pathname === "/") {
     return new Response(DOCS, {
@@ -55,7 +56,7 @@ async function handleRequest(request) {
       }
     });
   }
-  
+
   const isDockerHub = upstream == dockerHub;
   const authorization = request.headers.get("Authorization");
   if (url.pathname == "/v2/") {

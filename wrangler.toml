@@ -21,6 +21,7 @@ routes = [
   { pattern = "gcr.keveon.io", custom_domain = true },
   { pattern = "k8s-gcr.keveon.io", custom_domain = true },
   { pattern = "k8s.keveon.io", custom_domain = true },
+  { pattern = "lscr.keveon.io", custom_domain = true },
   { pattern = "ghcr.keveon.io", custom_domain = true },
   { pattern = "cloudsmith.keveon.io", custom_domain = true },
 ]
